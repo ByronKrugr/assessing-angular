@@ -1,0 +1,45 @@
+// --------------------------------------------------------------------------------------
+// 
+//      Notice how this does NOT take affect because we are stuck in view encapsulation 
+//      (confirm this by commenting out this same styling inside the global stylesheet 
+//      src/styles.scss.
+// 
+// --------------------------------------------------------------------------------------
+.mat-tab-group.mat-primary.myTabs .mat-ink-bar {
+    background-color: red;
+}
+
+// --------------------------------------------------------------------------------------
+// 
+//      Notice how this DOES (wrongly) take affect (confirm this by commenting out either one of 
+//      the global or view-encapsulated styling and seeing both take affect). 
+//      As mentioned, the reason for this is unknown
+// 
+// --------------------------------------------------------------------------------------
+.mat-flat-button.mat-primary.myButton {
+    border-radius: 100px;
+}
+
+.button {
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs {
+    grid-area: tabs;
+}
+
+.tabs-and-button {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+        '. . .'
+        '. button .'
+        '. tabs .'
+        '. . .';
+    height: 100%;
+    row-gap: 10px;
+}
